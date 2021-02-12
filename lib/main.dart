@@ -1,6 +1,7 @@
-import 'file:///C:/Users/user1/AndroidStudioProjects/flight_booking_app/lib/screens/splash.dart';
+import 'package:flight_booking_app/screens/authentication/login_screen.dart';
+import 'package:flight_booking_app/screens/authentication/signup-screen.dart';
 import 'package:flight_booking_app/screens/getstarted.dart';
-import 'package:flight_booking_app/screens/signup_screen.dart';
+import 'package:flight_booking_app/screens/splash.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.deepPurple,
         //visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Sign_up(),
+      home: Login_page(),
     );
   }
 }

@@ -14,33 +14,35 @@ class Splash_screen extends StatefulWidget{
   }
 }
 class Splash extends State<Splash_screen> {
-  void initState() {
-    super.initState();
-    Timer(Duration(seconds: 4),
-          ()=>Navigator.pushReplacement(context,
-          MaterialPageRoute(builder:
-              (context) =>
-              Getstarted()
-          )
-      ),
-    );
-  }
+  // void initState() {
+  //   super.initState();
+  //   Timer(Duration(seconds: 4),
+  //         ()=>Navigator.pushReplacement(context,
+  //         MaterialPageRoute(builder:
+  //             (context) =>
+  //             Getstarted()
+  //         )
+  //     ),
+  //   );
+  // }
   Widget build(BuildContext context) {
 
     return Scaffold(
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        color: HexColor("#1f1f98"),
+        color: CustomColors.backgroundcolor,//These is the entire background color
         child: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
                 child: Image.asset("assets/images/splashlogo.png",
                   width: MediaQuery.of(context).size.width * 0.5,
                   height: MediaQuery.of(context).size.height * 0.1,
                 ),
-                margin: const EdgeInsets.only(top: 300),
+                margin: const EdgeInsets.only(top: 40),
               ),
               Container(
                 child: Row(
@@ -58,7 +60,7 @@ class Splash extends State<Splash_screen> {
                   ],
                 ),
                 //margin: EdgeInsets.only(left: 20.0,right: 50.0),
-                margin: const EdgeInsets.only(left:120),
+                margin: const EdgeInsets.only(left:120,right: 25),
               )
             ],
           ),

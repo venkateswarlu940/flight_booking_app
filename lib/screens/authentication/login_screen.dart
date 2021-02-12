@@ -1,30 +1,26 @@
 import 'package:flight_booking_app/common/color.dart';
 import 'package:flight_booking_app/common/string.dart';
-import 'package:flight_booking_app/component/button.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flight_booking_app/component/flatbutton.dart';
+import 'package:flight_booking_app/component/raisedbutton.dart';
+import 'package:flight_booking_app/screens/authentication/signup-screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-
-// This is the signup page for the customers can register their details
-
-class Sign_up extends StatefulWidget{
-  @override
-  State<StatefulWidget> createState() {
-    // TODO: implement createState
-    return sign_screen();
-  }
+class Login_page extends StatefulWidget{
+@override
+State<StatefulWidget> createState() {
+  // TODO: implement createState
+  return Login_screen();
 }
-class sign_screen extends State<Sign_up>{
+}
+class Login_screen extends State<Login_page>{
   bool _isHidden=true;
-  String name,email;
+  String email;
   void _togglePasswordView() {
     setState(() {
       _isHidden = !_isHidden;
     });
   }
-  //TextController to read text entered in text field
 
-  TextEditingController password = TextEditingController();
+  //TextEditingController password = TextEditingController();  //TextController to read text entered in text field
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -46,7 +42,7 @@ class sign_screen extends State<Sign_up>{
                         margin: EdgeInsets.only(top:90),
                         child: ListTile(
                           title: Text(
-                            Strings.create,
+                            Strings.text_login,
                             style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold,
                                 color: CustomColors.deepgreycolor//By using class name and object to show the color here.
                             ),
@@ -55,33 +51,9 @@ class sign_screen extends State<Sign_up>{
                       ),
                       Container(
                         child: TextFormField(
-                          validator: (value) {
-                            if (value.isEmpty) {
-                              return Strings.text_validname;//please enter your name
-                            }
-                            return null;
-                          },
-                          onSaved: (String value){
-                           name=value;
-                          },
-                          decoration: InputDecoration(
-                            //suffixIcon: Icon(Icons.remove_red_eye),
-                            enabledBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(color:Colors.black54),
-                            ),
-                            hintText: Strings.name,
-                          ),
-                        ),
-                        margin: const EdgeInsets.only(left: 30,right: 30,top: 30),
-                      ),
-                      Container(
-                        child: TextFormField(
                           validator: validateEmail,
-                          // onSaved: (String value){
-                          //   email = value;
-                          // },
                           decoration: InputDecoration(
-                            suffixIcon: Icon(Icons.email),
+                            suffixIcon: Icon(Icons.done,color: CustomColors.pinkcolor),
                             enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(color:Colors.black54),
                             ),
@@ -92,23 +64,7 @@ class sign_screen extends State<Sign_up>{
                       ),
                       Container(
                         child:TextFormField(
-                          // validator: (value) {
-                          //   if (value.isEmpty) {
-                          //     return 'Please enter your password';
-                          //   }
-                          //   return null;
-                          // },
                           validator: validatePassword,
-                          //     (value) {
-                          //   if (value.isEmpty) {
-                          //     return "* Required";
-                          //   } else if (value.length < 6) {
-                          //     return "Password should be atleast 6 characters";
-                          //   } else if (value.length > 15) {
-                          //     return "Password should not be greater than 15 characters";
-                          //   } else
-                          //     return null;
-                          // },
                           obscureText: _isHidden,
                           decoration: InputDecoration(
                             hintText: Strings.password,
@@ -136,48 +92,45 @@ class sign_screen extends State<Sign_up>{
                               RaisedButtons(onPressed: (){
                                 // Validate returns true if the form is valid, otherwise false.
                                 if (_formKey.currentState.validate()) {
-                                 // print("successful");
+                                  // print("successful");
                                   // If the form is valid, display a snackbar. In the real world,
                                   // you'd often call a server or save the information in a database.
                                   // Scaffold
                                   //     .of(context)
                                   //     .showSnackBar(SnackBar(content: Text('Processing Data')));
                                 }else{
-                                 //print("Unsuccessful");
+                                  //print("Unsuccessful");
                                 }
                               },
-                                title:Strings.signup_buttton,//signup button
+                                title:Strings.text_loginbutton,//Login button text
                               ),
                             ],
                           ),
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(top:60,left: 30,right: 30),
+                        padding: const EdgeInsets.only(top:110,left: 30,right: 30),
                         child:Container(
                           child:Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Container(
-                                child: Text(Strings.text_account),  //here we add text by call the class and object name
-                                //margin: EdgeInsets.only(left: 20),
-                              ),
-                              Container(
-                                child:FlatButton(
-                                  onPressed: (){},
-                                  child:Text("Sign In",
-                                    style: TextStyle(
-                                      color: CustomColors.pinkcolor,//By using class name and object to show the color here.
-                                    ),
-                                  ),
-                                ),
+                                Text(Strings.text_createtext),  //here we add text by call the class and object name to display text.
+                                //margin: EdgeInsets.only(left: 20)
+                              Flatbttn(                    //this is for sign button
+                                title:Strings.text_signup,
+                                onPressed: (){
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context)=>Sign_up()),
+                                  );
+                                },
                               ),
                             ],
                           ),
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(top: 10),
+                        margin: EdgeInsets.only(top: 20),
                         child: Text(
                             Strings.text_skip),
                       ),

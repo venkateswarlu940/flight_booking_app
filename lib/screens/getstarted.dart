@@ -1,9 +1,10 @@
 import 'package:flight_booking_app/common/color.dart';
 import 'package:flight_booking_app/common/string.dart';
-import 'package:flight_booking_app/component/button.dart';
-import 'package:flight_booking_app/screens/signup_screen.dart';
+import 'package:flight_booking_app/component/raisedbutton.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+
+import 'authentication/signup-screen.dart';
 
 //This is the starting page where customers can click the start booking button it will go to the signup page.
 
@@ -25,8 +26,12 @@ class GetstartedState extends State<Getstarted> {
 
   List<T> map<T>(List list, Function handler) {
     List<T> result = [];
-    for (var i = 0; i < list.length; i++) {
-      result.add(handler(i, list[i]));
+    try {
+      for (var i = 0; i < list.length; i++) {
+        result.add(handler(i, list[i]));
+      }
+    }catch(e){
+      throw(e);
     }
     return result;
   }
@@ -107,18 +112,18 @@ class GetstartedState extends State<Getstarted> {
                   height: height*0.06,
                 ),
                 Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      RaisedButtons(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context)=>Sign_up()),
-                          );
-                        },
-                        title: Strings.textstart_booking,
-                      ),
-                    ],
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    RaisedButtons(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context)=>Sign_up()),
+                        );
+                      },
+                      title: Strings.textstart_booking,
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -130,7 +135,6 @@ class GetstartedState extends State<Getstarted> {
     return Scaffold(
       // backgroundColor:Colors.black87,
       body: OrientationBuilder(builder: (context, orientation) {
-        try {
           if (orientation == Orientation.portrait) {
             return _changeMode(
                 sliderHeight: height * 0.45,
@@ -146,10 +150,6 @@ class GetstartedState extends State<Getstarted> {
               sliderWidth: width * 0.58,
             );
           }
-        }
-        catch (e) {
-          print(e);
-        }
       }
       ),
     );
