@@ -1,11 +1,10 @@
 import 'dart:async';
-
 import 'package:flight_booking_app/common/color.dart';
 import 'package:flight_booking_app/common/string.dart';
 import 'package:flight_booking_app/screens/getstarted.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hexcolor/hexcolor.dart';
+// import 'package:hexcolor/hexcolor.dart';
 class Splash_screen extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
@@ -14,17 +13,17 @@ class Splash_screen extends StatefulWidget{
   }
 }
 class Splash extends State<Splash_screen> {
-  // void initState() {
-  //   super.initState();
-  //   Timer(Duration(seconds: 4),
-  //         ()=>Navigator.pushReplacement(context,
-  //         MaterialPageRoute(builder:
-  //             (context) =>
-  //             Getstarted()
-  //         )
-  //     ),
-  //   );
-  // }
+  void initState() {
+    super.initState();
+    Timer(Duration(seconds: 4),
+          ()=>Navigator.pushReplacement(context,
+          MaterialPageRoute(builder:
+              (context) =>
+              Getstarted()
+          )
+      ),
+    );
+  }
   Widget build(BuildContext context) {
 
     return Scaffold(

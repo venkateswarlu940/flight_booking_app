@@ -1,0 +1,40 @@
+
+{
+  "project_info": {
+    "project_number": "314985290016",
+    "project_id": "login-8bc11",
+    "storage_bucket": "login-8bc11.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:314985290016:android:f9abc94f38aef509dbdf45",
+        "android_client_info": {
+          "package_name": "com.example.flight_booking_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "314985290016-jjg6q3ldocucqpkvs4fpra8ms38dblt3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqNo9U5Lr4dQ5mMEP1rryDkrg5ZUILfEw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "314985290016-jjg6q3ldocucqpkvs4fpra8ms38dblt3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,6 +1,7 @@
 import 'package:flight_booking_app/screens/authentication/login_screen.dart';
 import 'package:flight_booking_app/screens/authentication/signup-screen.dart';
 import 'package:flight_booking_app/screens/getstarted.dart';
+import 'package:flight_booking_app/screens/home/home_screen.dart';
 import 'package:flight_booking_app/screens/splash.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.deepPurple,
         //visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Login_page(),
+      home: Home_screen(),
     );
   }
 }
