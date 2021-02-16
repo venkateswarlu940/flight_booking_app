@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flight_booking_app/common/color.dart';
 import 'package:flight_booking_app/common/string.dart';
 import 'package:flight_booking_app/component/raisedbutton.dart';
@@ -15,6 +16,13 @@ class Getstarted extends StatefulWidget {
 }
 
 class GetstartedState extends State<Getstarted> {
+  var Firebaseapp;
+  var FirebaseDatabase;
+  void signInauth(){
+    if (!Firebaseapp.getApps(this).isEmpty())
+      FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+  }
+
   //
   CarouselSlider carouselSlider;
   int _current = 0;
@@ -116,10 +124,11 @@ class GetstartedState extends State<Getstarted> {
                   children: <Widget>[
                     RaisedButtons(
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context)=>Sign_up()),
-                        );
+                        signInauth();
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(builder: (context)=>Sign_up()),
+                        // );
                       },
                       title: Strings.textstart_booking,
                     ),

@@ -23,8 +23,21 @@ class Strings {
   static const String text_signup = "Sign Up";
   static const String text_loginwith = "Login with";
   static const String text_forgetpassword = "Forgot Password";
-
-
+  static const String text_hometitle = "Home";
+  static const String text_bestoffers = "Best Offers";
+  static const String text_recdestionation = "Recommended Destination";
+  static const String text_viewall = "View all";
+  static const String text_thailand = "Thailand";
+  static const String text_bangkok = "Bangkok";
+  static const String text_paris = "Singapore";
+  static const String text_france = "malaysia";
+  static const String text_london = "London";
+  static const String text_ovel = "Ovel";
+  static const String text_popular = "Popular Places";
+  static const String text_flight = "Flight";
+  static const String text_hotel = "Hotel";
+  static const String text_car = "Car";
+  static const String text_resturant = "Resturant";
 
 }
 //validation for password
@@ -70,4 +83,9 @@ class ImageList{
   static const splashlogo_image='assets/images/splashlogo.png';
   static const fb_image='https://kulak.kuleuven.be/nl/nieuws_activiteiten/activiteiten/images/logo-facebook.png/image';
   static const google_image='https://img-authors.flaticon.com/google.jpg';
+  static const thailand_image='https://www.indochinatravel.com/country/thailand/images/thailand-header5.jpg';
+  static const paris_image='http://travelxcitement.com/wp-content/uploads/2018/01/p1-compressor.jpg';
+  static const singapoor_image='https://www.goworldtravel.com/wp-content/uploads/2017/10/travel-venice-italy.jpg';
+  static const newyork_image='https://static.travelagewest.com/i/sized/780/437/images.ntmllc.com/v4/destination/United-States/New-York/112100_SCN_NewYork_iStock901277560_ZAB1A1.jpg';
+  static const aus_image='https://www.ytravelblog.com/wp-content/uploads/2018/01/Sightseeing-New-York-City-Sightseeing-pass.jpg';
 }
